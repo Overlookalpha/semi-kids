@@ -55,6 +55,8 @@ const rotina = [
 
   const voltar = document.querySelector(".voltar");
   const listaRotina = document.getElementById("listaRotina");
+  const rotinaAtual =
+    document.getElementById("rotinaAtual");
   const btnFalar = document.getElementById("falar");
 
   btnCrianca.onclick = () => {
@@ -76,6 +78,46 @@ const rotina = [
     alert("Área dos Pais em desenvolvimento 👨");
 
   };
+
+  let proximaTarefa = null;
+
+  rotina.forEach((tarefa) => {
+
+    if (horaAtual <= tarefa.horario &&
+        proximaTarefa === null) {
+
+      proximaTarefa = tarefa;
+
+    }
+
+  });
+
+  if (proximaTarefa) {
+
+    rotinaAtual.innerHTML =
+
+      proximaTarefa.emoji + " " +
+
+      proximaTarefa.nome +
+
+      "<br>⏰ " +
+
+      proximaTarefa.horario;
+
+    let falaInicial =
+      new SpeechSynthesisUtterance(
+
+        "Sua próxima rotina é " +
+        proximaTarefa.nome
+
+      );
+
+    falaInicial.lang = "pt-BR";
+
+    speechSynthesis.speak(falaInicial);
+
+  }
+  
   rotina.forEach((tarefa) => {
 
     if (horaAtual === tarefa.horario) {

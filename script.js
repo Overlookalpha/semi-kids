@@ -28,4 +28,16 @@ window.onload = () => {
 
   };
 
+  const tarefas = document.querySelectorAll(".kids");
+
+tarefas.forEach((botao) => {
+
+  botao.addEventListener("click", () => {
+
+    botao.style.background = "#22c55e";
+
+  });
+
+});
+  
 };

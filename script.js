@@ -75,6 +75,23 @@ const rotina = [
     alert("Área dos Pais em desenvolvimento 👨");
 
   };
+  rotina.forEach((tarefa) => {
+
+    if (horaAtual === tarefa.horario) {
+
+      let aviso = new SpeechSynthesisUtterance(
+
+        "Hora de " + tarefa.nome
+
+      );
+
+      aviso.lang = "pt-BR";
+
+      speechSynthesis.speak(aviso);
+
+    }
+
+  });
 
   rotina.forEach((tarefa) => {
 

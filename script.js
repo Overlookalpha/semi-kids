@@ -88,11 +88,21 @@ const rotina = [
 
   tarefas.forEach((botao) => {
 
-    botao.addEventListener("click", () => {
+   botao.addEventListener("click", () => {
 
-      botao.style.background = "#22c55e";
+  botao.style.background = "#22c55e";
 
-    });
+  let fala = new SpeechSynthesisUtterance(
+
+    "Muito bem! Você completou " + botao.innerText
+
+  );
+
+  fala.lang = "pt-BR";
+
+  speechSynthesis.speak(fala);
+
+});
 
   });
   

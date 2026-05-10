@@ -148,9 +148,27 @@ btnFalar.onclick = () => {
 
       alert("Você disse: " + fala);
 
+     let respostaTexto = "";
+
+      if (
+        fala.includes("agora") ||
+        fala.includes("tarefa") ||
+        fala.includes("rotina")
+      ) {
+
+        respostaTexto =
+          "Sua próxima rotina é dormir às 21 horas";
+
+      } else {
+
+        respostaTexto =
+          "Ainda estou aprendendo 😊";
+
+      }
+
       let resposta =
         new SpeechSynthesisUtterance(
-          "Você disse " + fala
+          respostaTexto
         );
 
       resposta.lang = "pt-BR";

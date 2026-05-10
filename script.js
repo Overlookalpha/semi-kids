@@ -1,27 +1,31 @@
-const btnCrianca = document.querySelector(".kids");
-const btnPais = document.querySelector(".pais");
+window.onload = () => {
 
-const home = document.getElementById("home");
-const telaCrianca = document.getElementById("telaCrianca");
+  const btnCrianca = document.getElementById("abrirCrianca");
+  const btnPais = document.getElementById("abrirPais");
 
-const voltar = document.querySelector(".voltar");
+  const home = document.getElementById("home");
+  const telaCrianca = document.getElementById("telaCrianca");
 
-btnCrianca.addEventListener("click", () => {
+  const voltar = document.querySelector(".voltar");
 
-  home.style.display = "none";
-  telaCrianca.style.display = "block";
+  btnCrianca.onclick = () => {
 
-});
+    home.style.display = "none";
+    telaCrianca.style.display = "block";
 
-voltar.addEventListener("click", () => {
+  };
 
-  telaCrianca.style.display = "none";
-  home.style.display = "block";
+  voltar.onclick = () => {
 
-});
+    telaCrianca.style.display = "none";
+    home.style.display = "block";
 
-btnPais.addEventListener("click", () => {
+  };
 
-  alert("Área dos Pais em desenvolvimento 👨");
+  btnPais.onclick = () => {
 
-});
+    alert("Área dos Pais em desenvolvimento 👨");
+
+  };
+
+};

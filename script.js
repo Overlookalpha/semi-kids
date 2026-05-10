@@ -46,6 +46,7 @@ const rotina = [
   const telaCrianca = document.getElementById("telaCrianca");
 
   const voltar = document.querySelector(".voltar");
+  const listaRotina = document.getElementById("listaRotina");
 
   btnCrianca.onclick = () => {
 
@@ -67,16 +68,32 @@ const rotina = [
 
   };
 
-  const tarefas = document.querySelectorAll(".kids");
+  rotina.forEach((tarefa) => {
 
-tarefas.forEach((botao) => {
+  listaRotina.innerHTML +=
 
-  botao.addEventListener("click", () => {
+  '<button class="btn kids tarefa">' +
 
-    botao.style.background = "#22c55e";
+  tarefa.emoji + ' ' + tarefa.nome +
 
-  });
+  '<br>' +
+
+  '⏰ ' + tarefa.horario +
+
+  '</button>';
 
 });
+    
+  const tarefas = document.querySelectorAll(".tarefa");
+
+  tarefas.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+      botao.style.background = "#22c55e";
+
+    });
+
+  });
   
 };

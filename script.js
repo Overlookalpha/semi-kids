@@ -1,5 +1,44 @@
 window.onload = () => {
 
+const rotina = [
+
+    {
+      nome: "Acordar",
+      emoji: "🌞",
+      horario: "08:00",
+      concluido: false
+    },
+
+    {
+      nome: "Café da manhã",
+      emoji: "☕",
+      horario: "08:30",
+      concluido: false
+    },
+
+    {
+      nome: "Almoço",
+      emoji: "🍽️",
+      horario: "12:00",
+      concluido: false
+    },
+
+    {
+      nome: "Escovar os dentes",
+      emoji: "🪥",
+      horario: "13:00",
+      concluido: false
+    },
+
+    {
+      nome: "Dormir",
+      emoji: "🌙",
+      horario: "21:00",
+      concluido: false
+    }
+
+  ];
+  
   const btnCrianca = document.getElementById("abrirCrianca");
   const btnPais = document.getElementById("abrirPais");
 

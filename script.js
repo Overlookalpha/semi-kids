@@ -1,4 +1,12 @@
 window.onload = () => {
+const agora = new Date();
+
+  const horaAtual =
+    agora.getHours().toString().padStart(2, "0") +
+    ":" +
+    agora.getMinutes().toString().padStart(2, "0");
+
+  console.log(horaAtual);
 
 const rotina = [
 

@@ -55,6 +55,7 @@ const rotina = [
 
   const voltar = document.querySelector(".voltar");
   const listaRotina = document.getElementById("listaRotina");
+  const btnFalar = document.getElementById("falar");
 
   btnCrianca.onclick = () => {
 
@@ -130,5 +131,34 @@ const rotina = [
 });
 
   });
-  
+
+btnFalar.onclick = () => {
+
+    const reconhecimento =
+      new webkitSpeechRecognition();
+
+    reconhecimento.lang = "pt-BR";
+
+    reconhecimento.start();
+
+    reconhecimento.onresult = (event) => {
+
+      const fala =
+        event.results[0][0].transcript;
+
+      alert("Você disse: " + fala);
+
+      let resposta =
+        new SpeechSynthesisUtterance(
+          "Você disse " + fala
+        );
+
+      resposta.lang = "pt-BR";
+
+      speechSynthesis.speak(resposta);
+
+    };
+
+  };
+    
 };
